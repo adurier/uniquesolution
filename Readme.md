@@ -11,10 +11,7 @@ The coq proofs use either the excluded middle or a well-foundedness hypothesis o
 
 You can clone this repository (sources in the source subfolder), or download the last release:
 
-*   [Latest release (Archive .tar.gz)](https://github.com/adurier/uniquesolution/releases/latest)
-
-  
-On this repository you will also find the pdf of the paper.
+*   [Latest release](https://github.com/adurier/uniquesolution/releases/latest)
 
 
 ## Organisation of the proofs
