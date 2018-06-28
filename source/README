@@ -1,0 +1,54 @@
+Every .v file can be opened in interactive mode or with coqide. No compilation is needed. 
+Every previous file is loaded at the beginning of the new file, so it can take a few seconds.
+
+The final theorem is in unique_solution_thm.v. Details are explained in the comments.
+
+The files are split as follows, and in the following order:
+
+1. rels.v
+ A few lemmas and definitions regarding relations; the definitions of diagrams
+ is usefull to define bisimulations and bisimilarities
+
+2. LTS.v
+ Defines the notion of Labeled Transition System (with internal tau steps), 
+ and the usual definitions of weak transitions in such a LTS.
+
+3. bsim.v
+ Definition and properties of weak bisimulations, and weak bisimilarity. Most
+ of the work is related to the transitivity of weak bisimilarity.
+
+4. operators.v
+ Definition of autonomous transitions, then of sets of operators; also includes
+ some properties of functions, extensional equality of functions, and composition 
+ of functions.
+
+5. divergences.v
+ Definitions of the notions of reducts of an operator and divergence of the infinite
+ unfolding of an operator.
+
+6. unique_sol_prop.v
+ The first lemma: if an operator 'protects its solutions', then it has a unique
+ solution up to weak bisimilarity.
+
+7. termination.v
+ A few lemmas regarding termination, non divergence, well-foundedness.
+
+8. unique_solution_steps.v
+ The main part of the proof of the main theorem: we build a sequence of transitions
+ and operators, and use non divergence to show it must terminate; if it does, that 
+ proves that the operator protects its solution.
+
+9. unique_solution_thm.v
+ Putting everything together: statement of the main theorem.
+
+
+
+
+*Some important definitions (particularly those used as hypothesis, if one wants to check) are in:
+LTS, weak transitions (wtrans, wttrans, whtrans): LTS.v
+(strong and weak) bisimulation and bisimilarity: bsim.v
+extensional equality of functions, autonomous transitions, guardedness, set of operators, weak autonomous transitions (waut, wtaut, whaut): operators.v
+reduct (comp_red) of an operator, divergence (comp_div and div) of an operator (of its infinite unfolding): divergences.v
+unique solution, protects its solutions: unique_sol_prop.v
+the tau reduction relation (red_tau and reduction_tau) are in termination.v (for red_tau) and in unique_solution_thm.v (for reduction_tau). they are based on subrevR in termination.v, itself using comp_red from divergences.v
+
